@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevCord - Your Tech Solutions Partner</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #121212;
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(90deg, #1c2733, #2b3a47);
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        nav ul {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 25px;
+        }
+
+        nav a {
+            color: #ff4c4c;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+        }
+
+        .hero {
+            background: url('https://source.unsplash.com/1600x900/?technology,innovation') no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+            padding: 150px 20px;
+            position: relative;
+        }
+
+        .hero .logo {
+            margin-bottom: 20px;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 14px 28px;
+            background: #ff4c4c;
+            color: white;
+            font-size: 1.1rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            background: #ff6666;
+            transform: scale(1.1);
+        }
+
+        .services {
+            padding: 70px 20px;
+            background-color: #1f2a38;
+            text-align: center;
+        }
+
+        .services h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+
+        .service-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+        }
+
+        .service {
+            background: #2b3a47;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .service:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .service i {
+            font-size: 3rem;
+            color: #ff4c4c;
+            margin-bottom: 20px;
+        }
+
+        .service h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .service p {
+            font-size: 1rem;
+        }
+
+        .about, .contact, .how-we-do {
+            padding: 70px 20px;
+            text-align: center;
+        }
+
+        .how-we-price {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #1f2a38, #283747);
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .how-we-price h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            font-weight: 700;
+            color: #ff4c4c;
+            text-transform: uppercase;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+        }
+
+        .pricing-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .pricing-card {
+            background: #2b3a47;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease-in-out;
+            text-align: center;
+            width: 300px;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+            background: #334756;
+        }
+
+        .pricing-card i {
+            font-size: 3.5rem;
+            color: #ff4c4c;
+            margin-bottom: 20px;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .pricing-card p {
+            font-size: 1.1rem;
+            color: #cfd8dc;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 768px) {
+            .pricing-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+        .about h2, .contact h2, .how-we-do h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .how-we-do ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        .how-we-do li {
+            background: #2b3a47;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            background: #131921;
+            text-align: center;
+            padding: 30px;
+            color: #8b949e;
+        }
+
+        footer p {
+            font-size: 1rem;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .cta-btn {
+                padding: 12px 24px;
+                font-size: 1rem;
+            }
+
+            .services h2 {
+                font-size: 2rem;
+            }
+
+            .service-list {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .service {
+                padding: 25px;
+            }
+
+            footer p {
+                font-size: 0.9rem;
+            }
+
+            .how-we-do ul {
+                padding: 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h2 {
+                font-size: 1.6rem;
+            }
+
+            .hero p {
+                font-size: 0.9rem;
+            }
+
+            .cta-btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+
+            .services h2 {
+                font-size: 1.8rem;
+            }
+
+            .service-list {
+                grid-template-columns: 1fr;
+            }
+
+            .how-we-do ul {
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>DevCord</h1>
+        <nav>
+            <ul>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#how-we-do">How We Work</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='logo.jpeg') }}" alt="DevCord Logo" style="width: 150px; height: auto;">
+        </div>
+        <h2>Innovative Tech Solutions for Your Business</h2>
+        <p>We specialize in website development, app creation, game development, and AI/ML projects.</p>
+        <a href="#contact" class="cta-btn">Request a Quote</a>
+    </section>
+
+    <section id="services" class="services">
+        <h2>Our Services</h2>
+        <div class="service-list">
+            <div class="service">
+                <i class="fas fa-laptop-code"></i>
+                <h3>Website Development</h3>
+                <p>Custom, high-performance websites tailored to your needs.</p>
+            </div>
+            <div class="service">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>App Development</h3>
+                <p>Mobile and desktop apps that bring your ideas to life.</p>
+            </div>
+            <div class="service">
+                <i class="fas fa-brain"></i>
+                <h3>AI/ML Solutions</h3>
+                <p>Data sorting, predictive analytics, and AI-driven automation.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <h2>Why Choose DevCord?</h2>
+        <p>We combine technology and creativity to deliver powerful digital solutions that drive your business forward. Our experienced team works closely with you to understand your vision and bring it to life through innovative and efficient solutions.</p>
+        <p>We focus on the intersection of technology and design, ensuring that each project we work on is not only functional but also visually engaging.</p>
+    </section>
+
+    <section id="how-we-price" class="how-we-price">
+        <h2>How Do We Provide the Best Price?</h2>
+        <div class="pricing-container">
+            <div class="pricing-card">
+                <i class="fas fa-tools"></i>
+                <h3>Efficiency & Automation</h3>
+                <p>We use cutting-edge tools and automation to reduce manual effort, lowering development costs.</p>
+            </div>
+            <div class="pricing-card">
+                <i class="fas fa-chart-line"></i>
+                <h3>Smart Cost Optimization</h3>
+                <p>We eliminate unnecessary expenses and focus on essential, high-quality features for your project.</p>
+            </div>
+            <div class="pricing-card">
+                <i class="fas fa-handshake"></i>
+                <h3>Transparent Pricing</h3>
+                <p>No hidden fees! We provide detailed cost breakdowns to ensure you get the best value for your budget.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <p>If you’re ready to take your business to the next level with innovative tech solutions, get in touch with us today. Let’s bring your ideas to life!</p>
+        <a href="mailto:contact@devcord.store" class="cta-btn">Email Us</a>
+        <a href="https://discord.gg/SQ2BSfqP" class="cta-btn">Join Our Discord</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 DevCord - All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>
